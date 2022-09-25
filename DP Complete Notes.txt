@@ -1,0 +1,204 @@
+Design Patterns are no way related to Project Designing or System Designing.
+
+They are purely related to Project Implementation.
+
+Design Pattern is a set of rules which are best solutions for reoccuring problems
+in app development.
+
+They are proven soln/best practice to develop software more effectively.
+
+Solution designed for a reoccuring problem is design pattern.
+
+Every Design pattern has 3 Parts
+
+1.Problem
+2.Solution
+3.Context[Situation]
+
+The Best solution among numerous soln for a re-occuring problem in app development
+is design pattern.
+
+Anti Pattern : Worst solution for a reoccuring problem in app development is Anti Pattern.
+
+Design Patterns can be provided by anyone.
+
+1990 --> Richard Helm,Erich Gamma,Ralph Johnson and John Vilssides provided 100+ Design patterns for reoccuring problems in software development.
+
+Later they settled to 23 Patterns which are known as GOF/GO4 Patterns.
+
+GOF Patterns can be implemented in any OOP Language.
+
+Design Patterns Speaks about
+	1.Memory Management
+	2.Loose Coupling among Objects
+	3.Better Performance Management
+
+Design Patterns are used in Large Scale Enterprise Development
+
+GOF Patterns are quite useful in Standalone Apps
+
+2000s --> Sun MS has given a set of patterns like JEE Patterns for JEE Technologies based Layered App Development.
+
+JEE Patterns can be implemented in Java Language only
+
+2010 --> Microservices Architecture was replaced by Monolithic Architecture which was used to develop large scale Projects.
+		
+	In Microservices Architecture,Each Service will be developed as an independent project and such related services will be operated to gather to complete app development.
+
+Monolithic Architecture was the Traditional Architecture where u need to develop
+all services of an app in a single project.
+
+JEE Patterns solved the problems which occur in Project developed using Monolithic Architecture.
+
+Microservices Patterns are provided to solve problems in Project developed using Microservices Architecture.
+
+Since Project developed using Microservices Design Patterns are Layered Apps,
+hence we use JEE patterns as well as Microservices Design Patterns.
+
+Final Conclusion
+
+Standalone App Development <-- GOF/GO4 Design Patterns
+
+Monolithic Architecture App Development <-- GOF+JEE Patterns
+
+Microservice Architecture App Development <-- JEE+Microservices Patterns
+
+FAQ :What is the Difference between Architecture and Design Patterns?
+
+--> Architecture speaks about end to end plan to develop an app by involving
+multiple layers.
+
+--> Design Patterns speaks about solution which is used to solve re-occuring
+problems while writing logics in a particular layer of an architecture.
+
+	Example : MVC is a layered architecture to develop java web apps having certain execution flows.
+
+			 While Writing logics for each layer we take the support of Design Patterns.
+
+Important Terminologies while Documenting and Releasing Design Patterns
+
+	1.Candidate Pattern [Part of Pattern Identification] :
+
+		A Solution becomes a Candidate Pattern when it is considered as a best solution
+		for a reoccuring problem.
+	
+	2.Pattern Template/Pattern Characteristics [Part of Detailing the Design pattern] :
+
+	   Providing Details about a Candidate Pattern is Pattern Template.The Following
+	   details are provided in Pattern Template
+
+			1.Pattern Name
+			2.Problem
+			3.Forces
+			4.Solution
+				1.Structure
+				2.Strategies
+			5.Consequences
+			6.Related Patterns
+	
+	3.Pattern Catalog [Part of Pattern Categorization/Classification] :
+		
+		The Design Pattern will be verified by using Other Design Pattern Catalogs in the market to make sure that your design Pattern is unique.
+
+	Popular Pattern Catalogs : 1.GOF Pattern Catalog,2.JEE Pattern Catalog
+
+	When an Individual/Enterprise provides Numerous Design Patterns for Numerous
+	Problems then it is better to categorize them by creating Pattern Catalog
+
+	Doing This makes developers to take specific Design Pattern easily
+
+	
+	GOF Pattern Catalog Contains 3 Categories
+
+		1.Creational Pattern[Object Creation]
+		2.Structural Pattern[Composing Large Object using short object]
+		3.Behavioral Pattern[Interaction between Class and Object]
+
+	JEE Pattern Catalog contains 3 Categories
+
+		1.Presentation Tier Patterns
+		2.Business Tier Patterns
+		3.Integration Tier Patterns
+
+Note : A Candidate Pattern becomes a Design Pattern when a Pattern Template is provided.
+
+FAQ : What If I place multiple Logics in a Single Java Class?
+
+Ans:
+
+	1.There will be no clear cut seperation btwn one logic and another.
+
+	2.Modifiying Code in One Logic affects another logic.
+
+	3.Maintenance[Bug Fixing] and Enhancement[Adding New Features] becomes very complex.
+
+	4.Parallel Development isn't possible,hence productivity becomes poor.
+
+	5.It isn't an Industry Standard Approach. 
+
+Note : There are Different Types of Logics
+
+	1.Presentation Logics[UI Logics]
+
+	2.Business Logic[Calculations,sorting]
+
+	3.Persistence Logics [CURD/SCUD/CRUD Operations]
+
+	4.Advices Logics [Security,Logging,TX Management]
+
+	etc....
+
+To Overcome the Limitations of Multiple Logics in Single Class,we need to take
+support of Layered Apps[Placing Each Logic in each Layer/Class and connecting them]
+
+FAQ : What If I place multiple Logics in a Multiple Java Class?
+
+Ans:
+
+	1.There will be a clear cut seperation btwn one logic and another.
+
+	2.Modifiying Logic in a Layer doesn't affect the logic in another layer.
+
+	3.Maintenance[Bug Fixing] and Enhancement[Adding New Features] becomes easy.
+
+	4.Parallel Development is possible,hence productivity becomes good.
+
+	5.It is an Industry Standard Approach.
+
+Java Based Layered Applications have the Following Layer/Tier
+
+	1.Client Tier[Interacts with end user]
+
+	2.Presentation Tier[For Presentation]
+
+	3.Business Tier[Business Requirements implemented]
+
+	4.Integration Tier[Communicates with External Resources like DB,etc..]
+
+	5.Resource Tier[Database]
+	
+Tier : Logical Partition of App having certain types of logics
+
+Note : Client Tier and Resource Tier represents Non-Programmable [or] Ready Made Apps [or] External Apps.
+
+Programmers concentrate on the Other Three Tiers.
+
+Hence JEE Pattern Catalog has Design Patterns for these Tier Categorizations.
+
+Microservices Patterns
+----------------------
+
+Since Microservices is recently launched Architecture,hence there is No Standard Pattern Catalog yet released.The Popular
+Design Patterns are
+
+	1.API Gateway
+	
+	2.SAGA Pattern
+
+	3.Circuit Breaker
+
+	4.Asynchronus Messaging
+
+	5.Chain of Responsibility Pattern
+
+	etc...
