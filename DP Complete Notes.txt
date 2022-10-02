@@ -202,3 +202,127 @@ Design Patterns are
 	5.Chain of Responsibility Pattern
 
 	etc...
+
+(Session - 004)
+
+Singleton Class Pattern
+-----------------------
+
+	--> This Design Pattern comes under Creational Pattern Catalog
+
+	Problem : Creating Multiple Objects for Java Class in the following
+	Situations leads to memory wastage and CPU time wastage.
+
+		1.If class is not having member variables
+	
+		2.If class is having read only state[final variables]
+
+		3.If class is having shareable state[cache/buffer]
+
+	Solution : Develop java class as Singleton Class which allows us
+	to create only one object for the in any situation [i.e when class
+	doesn't have member variables,has final variables and it is in
+	shareable state]
+
+	Note : In Java , Object Creation is a Costly Process in terms
+	of memory and CPU Utilization.Hence it is recommended to
+	minimize or avoid object creation as long as u can.
+
+	Pre-Defined Singleton Classes
+
+		1.Runtime Class [java.lang package] : One Application can have onlu 1 Runtime
+
+ 		2.Desktop Class [java.awt package] : One Computer can contain 1 Desktop 
+
+		3.Logger Class [org.apache.log4j package] : One Logger Class takes care of Entire Logging Activities
+
+	Note : If One Object is only created for a java class when multiple objects can be created,then
+	that particular Class is not a Singleton Java Class.
+
+		Example : Servlet Component Class creates Only one Object where as
+		it is capable of creating multiple Objects.
+
+	Note : A Class is said to be a Singleton Java Class when we attempt to create multiple
+	multiple objects for a class but object reference of 1st object is passed to
+	other objects.
+
+	Singleton Java Class with Minimum Standards
+	-------------------------------------------
+
+	1.Place 0-param Constructor [also Parameterized Constructors] as private
+	Constructor,hence Object can't be created using new operator.
+
+	2.Create a private static variable with Class as type.This variable
+	holds a single reference of instance [object] of a class.
+
+		Using This Variable we can check whether Object has been created
+		or not.
+
+	Note : If Variable holds null --> Object has not yet been created
+
+	       If Variable holds reference value --> Object has been created
+
+	3.Place the Singleton logic in a static Factory Method
+
+	Note : Singleton Logic --> The logic to create the object by checking
+				   the value of above variable.
+
+	       Factory Method --> The Method to create a Object
+
+	Example:
+
+package com.sysveda.Singleton.MinimumStandards;
+
+public class Program1 {
+	private static Program1 INSTANCE;
+	private Program1() {
+		System.out.println("0-Param Constructor");
+	}
+	public static Program1 getInstance() {
+		if(INSTANCE==null) {
+			INSTANCE = new Program1();
+		}
+		return INSTANCE;
+	}
+	public static void main(String[] args) {
+		
+		Program1 obj1 = Program1.getInstance();
+		Program1 obj2 = Program1.getInstance();
+		Program1 obj3 = Program1.getInstance();
+		
+		System.out.println(obj1);
+		System.out.println(obj2);
+		System.out.println(obj3);
+	}
+}
+
+(Session - 005)
+
+Refer Notes for Singleton Class Example
+
+FAQ : We shouldn't go by constructor execution every time to confirm whether
+object is created or not.Why?
+
+Ans:
+	Reason-1 : If you create object for a child class whose parent class
+	is an abstract class,abstract class constructor and child class
+	constructor gets executed in the sametime.It doesn't mean that
+	object has been created for Abstract Class.
+
+	Note : Object can't be created for Interface and Abstract Class
+
+	Reason-2 : Constructor won't be executed when Object is created
+	via Cloning and De-serialization process.It doesn't mean that
+	object is not created.
+
+FAQ : If Multiple Threads calls Factory Method at a same time then is there
+      any possibility that Multiple Object gets Created for a Singleton
+      Java Class?
+
+Ans : Yes.It's going to be a serious issue when Singleton Class acts as a
+      helper Class for Servlet or JSP Components of Web Application which is 
+      a multi-threaded environment where multiple threads will be created
+      for multiple requests on Single Object of Singleton Class
+      [Servlet Component].
+
+	Eg : Refer Notes for Example and Diagram
